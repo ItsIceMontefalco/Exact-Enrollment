@@ -1,0 +1,168 @@
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    font-size: 62.5%; }
+
+.bar {
+    background-color: #ddd;
+    width: 35%;
+    height: 15px;
+    margin-top: 1rem;
+}
+
+
+
+.profile_image {
+  float: right;
+  margin-left: 20px;
+  max-width: 50%;
+  margin-top: -30px;
+  overflow: hidden;
+}
+
+.profile_image img {
+  max-width: 100%;
+  height: 300px;
+  width: 300px;
+  object-fit: cover; 
+}
+
+
+
+
+
+
+.bar.python .progress {
+    background-color: blue;
+    height:100%;
+    padding-left: 15px;
+    color:white;
+}
+
+.bar.cpp .progress {
+    background-color: green; 
+    height:100%;
+    padding-left: 15px;
+    color:white;
+}
+
+.bar.html .progress {
+    background-color: red;
+    height:100%;
+    padding-left: 15px;
+    color:white;
+}
+
+
+a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.description {
+    margin-top: 1rem;
+    margin-left:20px;
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--text-color);
+}
+
+
+
+.desc {
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--text-color);
+    margin-top: -300px;
+    margin-right: 350px;
+    margin-left:380px;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 1rem;
+    flex: 1;
+}
+
+
+@media only screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    
+
+    .desc {
+        margin-top: 20px;
+        margin-right: 0;
+        margin-left: 0;
+        font-size: 16px; 
+    }
+    
+
+    .profile_name, .contact {
+        font-size: 40px;
+    }
+
+    .profile_description {
+        max-width: 100%;
+      
+    }
+  
+}
+
+
+.container {
+    margin-top: 20px;
+    margin-left: 10px;
+    height: auto; /* changed from fixed height to auto */
+    width: 100%; /* changed from fixed width to 100% */
+    background: lightgrey;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px; /* added padding */
+}
+
+.profile {
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+
+/* profile */
+.profile_name {
+  font-size: 70px;
+  margin-left: 20px;
+    flex: 1;
+    text-align: left;
+}
+  
+  .contact {
+  font-size: 50px;
+  padding-left: 10px;
+    flex: 1;
+    text-align: left;
+    padding-top: 40px;
+}
+  
+  
+
+.profile_description {
+    text-align: left;
+    margin-top: 1rem;
+    max-width: 300px; 
+    margin-left: 20px
+}
+
+.skills_list {
+    margin-top: 1rem;
+    margin-left: 20px;
+    line-height: 2;
+}

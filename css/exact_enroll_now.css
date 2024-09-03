@@ -1,0 +1,186 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "montserrat";
+  src: url("../assets/fonts/Montserrat-Regular.otf");
+}
+.navbar-nav .nav-link {
+  position: relative; /* Ensure proper positioning for the pseudo-element */
+  text-align: center; /* Center the text */
+}
+
+/* Underline effect for navbar links */
+.navbar-nav .nav-link::after {
+  content: ""; /* Create a pseudo-element */
+  position: absolute;
+  bottom: 0;
+  left: 50%; /* Move the starting position of the line to the center */
+  transform: translateX(-50%); /* Center the line horizontally */
+  width: 0; /* Initially hide the underline */
+  height: 2px; /* Thickness of the underline */
+  background-color: #919191; /* Color of the underline */
+  transition: width 0.3s; /* Smooth transition effect for width */
+}
+
+/* Hover effect for navbar links */
+.navbar-nav .nav-link:hover::after {
+  width: 100%; /* Expand the underline to fit the text width */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "montserrat";
+  list-style-type: none;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+main {
+  position: relative;
+  top: 4%;
+  /* Animation for button */
+}
+main img {
+  width: 95%;
+  box-shadow: -0.8rem 0.5rem 3rem rgba(0, 0, 0, 0.2);
+}
+main .title {
+  color: #4285f4; /* Light blue theme */
+  font-weight: bold;
+  font-size: 2.7rem; /* Slightly bigger font size */
+  text-align: center; /* Center align text */
+}
+main ul {
+  padding: 2rem 1rem 2rem 1rem;
+  box-shadow: -0.5rem 0.5rem 3rem rgba(0, 0, 0, 0.15);
+}
+main li {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+main .divider {
+  border-style: solid;
+  border-width: 1px;
+  width: 70%;
+  margin: 1rem 0 1rem 0;
+  opacity: 25%;
+}
+main .application-type-text {
+  width: fit-content;
+  margin-top: 1rem;
+  color: #4285f4; /* Light blue theme */
+  font-size: 1.1rem; /* Slightly bigger font size */
+  text-align: center; /* Center align text */
+}
+main .button {
+  padding: 1rem;
+  border-radius: 10px;
+  background-color: #0e20b9; /* Dark blue theme */
+  color: #ffde59; /* Light yellow theme */
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+main .button::before {
+  content: "✎"; /* Unicode for pencil icon */
+  display: inline-block;
+  margin-right: 0.5rem;
+  animation: pencil 2s infinite linear;
+}
+main .button:hover {
+  background-color: #4285f4; /* Light blue theme */
+}
+@keyframes pencil {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+main .button a {
+  color: #ffde59;
+  text-decoration: none;
+}
+
+#apply-button {
+  animation: pop-up 0.5s infinite alternate;
+}
+
+#apply-button::before {
+  content: "✎"; /* Unicode for pencil icon */
+  display: inline-block;
+  animation: pencil 1s infinite linear;
+}
+
+@keyframes pop-up {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes pencil {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+/* Media query for small screens (phones) */
+@media (max-width: 576px) {
+  main {
+    top: 0; /* Adjust top spacing for small screens */
+  }
+  .title {
+    font-size: 2rem; /* Decrease font size for small screens */
+  }
+  .application_img {
+    width: 100%; /* Make images full width on small screens */
+  }
+  .application-type-text {
+    font-size: 0.9rem; /* Decrease font size for small screens */
+  }
+  .button {
+    font-size: 1rem; /* Decrease font size for small screens */
+    padding: 0.8rem; /* Adjust button padding for small screens */
+  }
+  .button::before {
+    margin-right: 0.3rem; /* Adjust pencil icon margin for small screens */
+  }
+}
+/* Media query for medium and large screens */
+@media (min-width: 577px) {
+  main {
+    top: 4%; /* Adjust top spacing for medium and large screens */
+  }
+  .title {
+    font-size: 2.7rem; /* Reset font size for medium and large screens */
+  }
+  .application-type-text {
+    font-size: 1rem; /* Reset font size for medium and large screens */
+  }
+  .button {
+    font-size: 1.2rem; /* Reset font size for medium and large screens */
+    padding: 1rem; /* Reset button padding for medium and large screens */
+  }
+}/*# sourceMappingURL=exact_enroll_now.css.map */

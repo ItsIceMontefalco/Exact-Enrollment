@@ -1,0 +1,225 @@
+//Color Themes
+$light-blue-theme: #4285f4;
+$light-yellow-theme: #ffde59;
+$dark-blue-theme: #0e20b9;
+
+//Fonts
+@font-face {
+    font-family: "montserrat";
+    src: url("../assets/fonts/Montserrat-Regular.otf");
+}
+
+//Designs
+
+.navbar-nav .nav-link {
+    position: relative; /* Ensure proper positioning for the pseudo-element */
+    text-align: center; /* Center the text */
+}
+
+/* Underline effect for navbar links */
+.navbar-nav .nav-link::after {
+    content: ''; /* Create a pseudo-element */
+    position: absolute;
+    bottom: 0;
+    left: 50%; /* Move the starting position of the line to the center */
+    transform: translateX(-50%); /* Center the line horizontally */
+    width: 0; /* Initially hide the underline */
+    height: 2px; /* Thickness of the underline */
+    background-color: #919191; /* Color of the underline */
+    transition: width 0.3s; /* Smooth transition effect for width */
+}
+
+/* Hover effect for navbar links */
+.navbar-nav .nav-link:hover::after {
+    width: 100%; /* Expand the underline to fit the text width */
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "montserrat";
+    list-style-type: none;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+header {
+    background-image: url("../assets/images/exact.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 80%;
+
+    .dark-bg {
+        height: 100%;
+        width: 100%;
+        background-color: rgba($color: #000000, $alpha: 0.25);
+    }
+
+    .school-quote {
+        .text {
+            color: white;
+            font-weight: bold;
+            font-size: 4rem;
+        }
+
+        .text:nth-child(1) {
+            margin-left: 2rem;
+        }
+
+        .text:nth-child(2) {
+            margin-left: 4rem;
+        }
+
+        .text:nth-child(3) {
+            margin-left: 6rem;
+        }
+
+        .yellow-text:nth-child(4) {
+            margin-left: 5rem;
+        }
+
+        .yellow-text {
+            color: $light-yellow-theme;
+        }
+    }
+}
+
+main {
+    .programs-text {
+        font-size: 3rem;
+        color: $dark-blue-theme;
+        font-weight: bold;
+    }
+
+    .rounded-circle {
+        width: 150px;
+        height: 150px;
+        background-color: $light-blue-theme;
+        margin-bottom: 1rem;
+    }
+
+    .programs-icon {
+        width: 5rem;
+    }
+
+    .programs {
+        color: $dark-blue-theme;
+        width: 10rem;
+        text-align: center;
+    }
+
+    /*-------SLIDER ANIMATION---------*/
+
+    @keyframes slide_animation {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(calc(-200px * 12)); /* Adjust based on the number of slides */
+        }
+    }
+
+    .authors-list {
+        overflow: hidden;
+    }
+
+    .author {
+         width: 500px;
+        background-color: white;
+        border-radius: 10px;
+        margin-right: 3rem;
+        box-shadow: -1rem 0 3rem #17141d;
+        transition: 0.8s ease-out;
+        cursor: pointer; /* Add cursor pointer */
+        position: relative; /* Add position relative */
+        animation: slide_animation 100s linear infinite; /* Change animation iteration count to infinite */
+        animation-delay: calc(var(--animation-duration) * -30); /* Set animation delay to negative duration */
+        }
+
+    .author-img {
+        height: 300px;
+        width: 300px;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
+    /* Pause the animation on hover */
+    .authors-list:hover .author {
+        animation-play-state: paused;
+    }
+
+    /* Resume the animation when not hovering */
+    .authors-list:not(:hover) .author {
+        animation-play-state: running;
+    }
+
+    .author:not(:first-child) {
+        margin-left: -29px;
+    }
+
+    .author:hover {
+        transform: translateY(-30px);
+        transition: 0.8s ease-out;
+    }
+
+    .author:hover ~ .author {
+        position: relative;
+        left: 29px;
+        transition: 0.8s ease-out;
+    }
+
+    .authors-text {
+        font-size: 3rem;
+        color: $dark-blue-theme;
+        font-weight: bold;
+    }
+
+    .author-information {
+        width: fit-content;
+        color: $light-blue-theme;
+        font-weight: bolder;
+    }
+}
+
+
+//ENROLL NOW BUTTON
+
+#apply-button {
+    animation: pop-up 0.5s infinite alternate;
+  }
+  
+  #apply-button::before {
+    content: '\270E'; /* Unicode for pencil icon */
+    display: inline-block;
+    animation: pencil 1s infinite linear;
+  }
+  
+
+@keyframes pop-up {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  @keyframes pencil {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-5px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }

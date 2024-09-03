@@ -1,0 +1,75 @@
+//Color Themes
+$light-blue-theme: #4285f4;
+$light-yellow-theme: #ffde59;
+$dark-blue-theme: #0e20b9;
+
+//Fonts
+@font-face {
+    font-family: "montserrat";
+    src: url("../assets/fonts/Montserrat-Regular.otf");
+}
+
+.navbar {
+    background-color: $dark-blue-theme;
+
+}
+
+.navbar-brand {
+    background-image: url("../assets/images/exact-logo.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100px;
+    width: 20%;
+
+    @media (max-width: 768px) {
+        width: 35%;
+    }
+}
+
+#apply-button {
+    background-color: $light-blue-theme;
+    color: white;
+}
+
+footer {
+    background-color: $dark-blue-theme;
+    height: 30%;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+
+    .logo-container {
+        position: relative;
+
+        .copyright-text {
+            color: white;
+        }
+
+        #exact-text {
+            position: absolute;
+            left: 2rem;
+            bottom: 1rem;
+        }
+
+        #copyright-text {
+            position: absolute;
+            left: 2rem;
+            bottom: 0rem;
+        }
+    }
+
+    .contact-container {
+        .contact-texts:nth-child(1) {
+            font-size: 2rem;
+        }
+        .contact-texts {
+            color: white;
+        }
+    }
+
+    iframe{
+        width: 40%;
+        height: 90%;
+    }
+}

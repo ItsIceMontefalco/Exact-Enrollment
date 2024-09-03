@@ -1,0 +1,164 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "montserrat";
+  src: url("../assets/fonts/Montserrat-Regular.otf");
+}
+@font-face {
+  font-family: "montserrat-bold";
+  src: url("../assets/fonts/montserrat/Montserrat-Bold.otf");
+}
+.navbar-nav .nav-link {
+  position: relative; /* Ensure proper positioning for the pseudo-element */
+  text-align: center; /* Center the text */
+}
+
+/* Underline effect for navbar links */
+.navbar-nav .nav-link::after {
+  content: ""; /* Create a pseudo-element */
+  position: absolute;
+  bottom: 0;
+  left: 50%; /* Move the starting position of the line to the center */
+  transform: translateX(-50%); /* Center the line horizontally */
+  width: 0; /* Initially hide the underline */
+  height: 2px; /* Thickness of the underline */
+  background-color: #919191; /* Color of the underline */
+  transition: width 0.3s; /* Smooth transition effect for width */
+}
+
+/* Hover effect for navbar links */
+.navbar-nav .nav-link:hover::after {
+  width: 100%; /* Expand the underline to fit the text width */
+}
+
+* {
+  list-style: none;
+}
+
+body {
+  width: 100%;
+  overflow: auto;
+}
+
+.page-container {
+  padding-left: 1rem;
+  background-repeat: no-repeat;
+  background-position: right;
+  width: fit-content;
+  margin: 0;
+}
+
+.author-1 {
+  background-image: url(../assets/images/author.png);
+  background-size: 30%;
+  background-position: bottom right;
+}
+
+.author-2 {
+  background-image: url(../assets/images/james.png);
+  background-size: 30%;
+  background-position: bottom right;
+}
+
+.author-3 {
+  background-image: url(../assets/images/adriana.png);
+  background-size: 30%;
+  background-position: bottom right;
+}
+
+.author-4 {
+  background-image: url(../assets/images/eisen.png);
+  background-size: 25%;
+  background-position: bottom right;
+}
+
+.author-5 {
+  background-image: url(../assets/images/shane.png);
+  background-size: 20%;
+  background-position: bottom right;
+}
+
+.author-6 {
+  background-image: url(../assets/images/author-6.png);
+  background-size: 20%;
+  background-position: bottom right;
+}
+
+.light-grey-background {
+  background-color: #f1f2f4;
+}
+
+.left-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.black-color {
+  font-family: "montserrat-bold";
+  font-size: 2.7rem;
+}
+
+.grey-color {
+  color: #8e8d93;
+  font-size: 1.7rem;
+}
+
+.name {
+  font-size: 5rem;
+}
+
+.skill-lists {
+  display: flex;
+}
+
+.contact-information li a {
+  text-decoration: none;
+  color: #8e8d93;
+}
+
+ul {
+  padding: 0;
+}
+
+.right-container {
+  display: flex;
+  align-items: center;
+}
+
+.about-me {
+  width: 50%;
+  padding-left: 1rem;
+  border-left: solid 1px #8e8d93;
+}
+
+#apply-button {
+  animation: pop-up 0.5s infinite alternate;
+}
+
+#apply-button::before {
+  content: "✎"; /* Unicode for pencil icon */
+  display: inline-block;
+  animation: pencil 1s infinite linear;
+}
+
+@keyframes pop-up {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes pencil {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}/*# sourceMappingURL=exact-authors.css.map */

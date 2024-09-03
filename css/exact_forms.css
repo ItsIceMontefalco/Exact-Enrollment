@@ -1,0 +1,334 @@
+@charset "UTF-8";
+/* Color Themes */
+/* Fonts */
+@font-face {
+  font-family: "montserrat";
+  src: url("../assets/fonts/Montserrat-Regular.otf");
+}
+/* Navbar Styles */
+.navbar-nav .nav-link {
+  position: relative; /* Ensure proper positioning for the pseudo-element */
+  text-align: center; /* Center the text */
+}
+
+/* Underline effect for navbar links */
+.navbar-nav .nav-link::after {
+  content: ""; /* Create a pseudo-element */
+  position: absolute;
+  bottom: 0;
+  left: 50%; /* Move the starting position of the line to the center */
+  transform: translateX(-50%); /* Center the line horizontally */
+  width: 0; /* Initially hide the underline */
+  height: 2px; /* Thickness of the underline */
+  background-color: #919191; /* Color of the underline */
+  transition: width 0.3s; /* Smooth transition effect for width */
+}
+
+/* Hover effect for navbar links */
+.navbar-nav .nav-link:hover::after {
+  width: 100%; /* Expand the underline to fit the text width */
+}
+
+/* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "montserrat";
+  list-style-type: none;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+/* Main Section Styles */
+main {
+  display: flex;
+  justify-content: center;
+  height: 60%;
+}
+
+/* Form Container Styles */
+.form-container {
+  position: relative;
+  width: 60%;
+  background-color: rgba(154, 174, 201, 0.431372549);
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.322);
+}
+
+/* Form Styles */
+form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 20px;
+}
+
+.text {
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+
+input[type=text],
+select,
+input[type=number] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+input[type=text]:focus,
+select:focus,
+input[type=number]:focus {
+  border-color: #4285f4;
+}
+
+/* Adjustments for responsiveness */
+@media (max-width: 768px) {
+  .form-container {
+    width: 90%;
+  }
+  form {
+    grid-template-columns: 1fr;
+  }
+}
+/* Button Styles */
+button[type=submit] {
+  position: relative;
+  background-color: #4285f4;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s, opacity 0.3s;
+  overflow: hidden; /* Ensure pseudo-elements don't affect layout */
+  font-size: 16px;
+}
+
+button[type=submit]::before {
+  content: "✔"; /* Unicode for checkmark icon */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  font-size: 24px;
+  color: white;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+button[type=submit]:hover {
+  background-color: #0e20b9; /* Change background color to ensure visibility of checkmark */
+}
+
+button[type=submit]:hover::before {
+  transform: translate(-50%, -50%) scale(1); /* Scale up the checkmark */
+}
+
+button[type=submit]:hover span {
+  opacity: 0; /* Fade out the button text */
+}
+
+button[type=submit]:active::before {
+  opacity: 0;
+}
+
+/* Center the submit button */
+#submit {
+  grid-column: span 2;
+  justify-self: center;
+  bottom: 10px;
+}
+
+/* Loading */
+.dimmed-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+  z-index: 999; /* Ensure the overlay is on top of other content */
+  display: none; /* Initially hidden */
+}
+
+.loading-icon {
+  position: fixed; /* Change to fixed */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  border: 5px solid rgba(255, 255, 255, 0.3); /* Semi-transparent white border */
+  border-top: 5px solid #0e20b9; /* Dark Blue theme */
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  z-index: 1000; /* Ensure the loading icon is above the dimmed overlay */
+  display: none; /* Initially hidden */
+}
+
+@keyframes spin {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  padding: 20px;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000; /* Ensure it's on top */
+  display: none; /* Initially hidden */
+}
+
+#submission-message {
+  font-size: 18px;
+  color: #333;
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(-50%) translateY(100%);
+  }
+  100% {
+    transform: translateX(-50%) translateY(0%);
+  }
+}
+.hidden {
+  display: none;
+}
+
+/* ENROLL NOW BUTTON */
+#apply-button {
+  animation: pop-up 0.5s infinite alternate;
+}
+
+#apply-button::before {
+  content: "✎"; /* Unicode for pencil icon */
+  display: inline-block;
+  animation: pencil 1s infinite linear;
+}
+
+@keyframes pop-up {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes pencil {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+/* Modal Styles */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 999; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scrolling if needed */
+  background-color: rgba(0, 0, 0, 0.5); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: rgba(254, 254, 254, 0.137254902);
+  margin: 20% auto; /* Adjust margin to position the box */
+  padding: 10px; /* Reduce padding for a smaller box */
+  border: 5px solid rgba(136, 136, 136, 0.231372549); /* Reduce border thickness */
+  width: 30%; /* Adjust width as needed */
+  max-width: 300px; /* Limit maximum width */
+  border-radius: 5px;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.527);
+}
+
+/* Close Button */
+.close {
+  color: #0e20b9;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  font-family: "Material Icons"; /* Use Matieral Icons for icons */
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Boat Container */
+.boat-container {
+  position: absolute;
+  top: 10px; /* Adjust positioning as needed */
+  right: 10px; /* Adjust positioning as needed */
+  width: 80px; /* Set width of the container */
+  height: 80px; /* Set height of the container */
+  z-index: 10; /* Ensure it sits above other content */
+  cursor: pointer; /* Make it hoverable */
+  animation: sail 2s linear infinite alternate; /* Sailing animation */
+}
+
+/* Boat Icon */
+.boat-icon {
+  width: 100%;
+  height: 95%;
+  fill: #4285f4; /* Set your desired color */
+  transform-origin: center; /* Set transform origin for smooth animation */
+}
+
+/* Water Animation */
+.water {
+  fill: #0e20b9; /* Set water color */
+  opacity: 1; /* Adjust water opacity */
+  animation: wave 1s linear infinite alternate; /* Water wave animation */
+}
+
+@keyframes sail {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-10px); /* Adjust vertical movement */
+  }
+}
+@keyframes wave {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-1px); /* Adjust horizontal movement */
+  }
+}/*# sourceMappingURL=exact_forms.css.map */
