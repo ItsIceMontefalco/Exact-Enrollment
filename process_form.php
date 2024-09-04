@@ -1,8 +1,8 @@
 <?php
 // Define database connection details
-$servername = "localhost"; // Change if needed
-$username = "your_db_username"; // Your database username
-$password = "your_db_password"; // Your database password
+$servername = "localhost"; // XAMPP runs on localhost by default
+$username = "root"; // Default XAMPP username
+$password = ""; // Default XAMPP password is empty
 
 // Retrieve the application type from the form submission
 $applicationType = $_POST['application-type'];
@@ -62,4 +62,4 @@ if ($stmt->execute()) {
 // Close connections
 $stmt->close();
 $dbConnection->close();
-
+?>
