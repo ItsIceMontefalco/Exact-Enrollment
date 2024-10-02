@@ -87,7 +87,7 @@ body {
 
 .description {
   text-wrap: wrap;
-  width: 1000px;
+  width: 100%;
   background-color: lightgrey;
   padding: 1rem;
 }
