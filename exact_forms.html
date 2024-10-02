@@ -10,14 +10,15 @@
   <link rel="stylesheet" href="bootstrap-5.3.2-dist/bootstrap-5.3.2-dist/css/bootstrap.min.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="icon" href="https://res.cloudinary.com/exactcloud/image/upload/v1531557437/gallery/i9aaty2hetaerkjunbjc.png" type="image/x-icon">
-</head>
 
+</head>
+<div id="dimmed-overlay" class="dimmed-overlay"></div>
 <body>
-  <div id="dimmed-overlay" class="dimmed-overlay"></div>
   <nav class="navbar navbar-expand-lg">
     <div class="container-fluid">
       <a class="navbar-brand link-light fw-bold fs-3 me-0 ms-5" href="index.html"></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
@@ -34,15 +35,13 @@
         </ul>
       </div>
       <a href="exact_enroll_now.html" class="btn fw-bold me-5 nav-item" id="apply-button" role="button">ENROLL NOW!</a>
-    </div>
+      </disdv>
   </nav>
 
-
-  
   <main>
     <div class="form-container mt-3">
       <div class="text">Student Information</div>
-      <form id="student-form" action="process_form.php" method="post" onsubmit="return handleSubmit();">
+      <form id="student-form" action="" method="post">
         <input type="text" name="f-name" id="f-name" placeholder="First Name">
         <input type="text" name="m-name" id="m-name" placeholder="Middle Name">
         <input type="text" name="l-name" id="l-name" placeholder="Last Name">
@@ -99,8 +98,7 @@
         </select>
         <input type="text" name="address" id="address" placeholder="Complete Address" required>
         <input type="text" name="zip" id="zip" placeholder="ZIP code" required>
-        <input type="hidden" id="application-type" name="application-type" value=""> <!-- Hidden input to store application type -->
-        <button type="submit" id="submit"><span>Submit</span></button>
+        <button type="submit" id="submit" onclick="handleSubmit()"><span>Submit</span></button><!-- Pop-up for submission complete message -->
         <div id="loading-icon" class="loading-icon hidden"></div>
 
         <!--BOAT ICON DO NOT TOUCH -->
@@ -114,7 +112,7 @@
           </svg>
       </div>
     </form>
-    <div id="submission-popup" class="popup" style="display: none;">
+    <div id="submission-popup" class="popup"">
       <p id="submission-message">Submission Complete!</p>
     </div>
     </div>

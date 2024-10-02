@@ -43,8 +43,6 @@ $dark-blue-theme: #0e20b9;
 
 html, body {
     height: 100%;
-    margin: 0;
-    overflow: hidden;
 }
 
 /* Main Section Styles */
@@ -166,7 +164,7 @@ button[type="submit"]:active::before {
 }
 
 .loading-icon {
-    position: fixed; /* Change to fixed */
+    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -177,7 +175,10 @@ button[type="submit"]:active::before {
     border-radius: 50%;
     animation: spin 1s linear infinite;
     z-index: 1000; /* Ensure the loading icon is above the dimmed overlay */
-    display: none; /* Initially hidden */
+}
+
+.hidden {
+    display: none;
 }
 
 @keyframes spin {
@@ -186,25 +187,17 @@ button[type="submit"]:active::before {
 }
 
 .popup {
+    display: none;
     position: fixed;
-    top: 50%;
+    bottom: 20px;
     left: 50%;
-    transform: translate(-50%, -50%);
-    width: 300px;
+    transform: translateX(-50%);
+    background-color: #fff;
     padding: 20px;
-    background-color: white;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    z-index: 1000; /* Ensure it's on top */
-    display: none; /* Initially hidden */
-  }
-
-#submission-message {
-    font-size: 18px;
-    color: #333;
-  }
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    animation: slideIn 0.5s ease-in-out;
+}
 
 @keyframes slideIn {
     0% {
@@ -213,10 +206,6 @@ button[type="submit"]:active::before {
     100% {
         transform: translateX(-50%) translateY(0%);
     }
-}
-
-.hidden {
-    display: none;
 }
 
 /* ENROLL NOW BUTTON */

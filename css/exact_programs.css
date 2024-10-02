@@ -22,10 +22,6 @@
   width: 100%; /* Expand the underline to fit the text width */
 }
 
-main {
-  height: 60%;
-}
-
 h1 {
   font-weight: bolder;
 }
