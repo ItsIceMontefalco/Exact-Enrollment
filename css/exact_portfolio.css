@@ -109,7 +109,7 @@ main .authors-list {
 main .author {
   width: 600px;
   background-color: white;
-  border-radius: 20px;
+  border-radius: 9px;
   margin-right: 3rem;
   box-shadow: 1rem 0 3rem #0e20b9;
   transition: 1s ease-out;
