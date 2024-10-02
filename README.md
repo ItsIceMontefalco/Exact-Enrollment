@@ -18,9 +18,4 @@ Website Deployment Status
 
 ## Members
 
-- **Patrick Munoz** 🧑‍💻
-- **April Reyes** 🧑‍💻
-- **Adriana Castro** 🧑‍💻
-- **Shane Roque** 🧑‍💻
-- **Eisen Pascual** 🧑‍💻
-- **Justine Alejo** 🧑‍💻
+- **Erica Joy** 🧑‍💻
